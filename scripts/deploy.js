@@ -65,18 +65,25 @@ async function main() {
   const swapUtils = await SwapUtils.deploy();
   await swapUtils.deployed();
 
-  const SwapCreator = await ethers.getContractFactory("SwapCreator", {
+  // const SwapCreator = await ethers.getContractFactory("SwapCreator", {
+  //   // signer: signers[0],
+  //   libraries: {
+  //     SwapUtils: swapUtils.address,
+  //   },
+  // });
+
+  // const swapCreator = await SwapCreator.deploy();
+
+  // await swapCreator.deployed();
+
+  // console.log("Swap Creator is deployed to:", swapCreator.address);
+
+  const Swap = await ethers.getContractFactory("Swap", {
     // signer: signers[0],
     libraries: {
       SwapUtils: swapUtils.address,
     },
   });
-
-  const swapCreator = await SwapCreator.deploy();
-
-  await swapCreator.deployed();
-
-  console.log("Swap Creator is deployed to:", swapCreator.address);
 
 }
 
