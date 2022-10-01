@@ -14,6 +14,16 @@
       "address": "0x3F3337cD8262F3246875C0e4BA79d9b767c0c5DC",
       "txHash": "0xb23de322bd1edee3e8591eecb8297a31a944e646819f2a73bc51db15c21f7ae3",
       "kind": "transparent"
+    },
+    {
+      "address": "0xb71A9F36652E35647D97bBd753fA24590514BFa4",
+      "txHash": "0x98a0e58e7a7c17c5b87ec353aae0bc413420a5449629ad7e9f88afee81dbeeac",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xe069c797ab330EB3362743e3E25225E47bE98122",
+      "txHash": "0x36e2543478f4e122bdd9dea95b92b4bf6d03c27090c697ce7854c2bfb413b190",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -493,6 +503,488 @@
           "t_mapping(t_uint256,t_address)": {
             "label": "mapping(uint256 => address)",
             "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "5368dd55cfdaa282920f964a82e6cb959a7ed356168f1145c213b6702d76e896": {
+      "address": "0x2335351cD9D224d0b6B446Ed920607404EA0a7C8",
+      "txHash": "0xaca2da590e5ed76ee602394abb63a0f89b1e8b8cf5630890ec2f89c3d8d5faec",
+      "layout": {
+        "solcVersion": "0.6.12",
+        "storage": [
+          {
+            "label": "operator",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1369"
+          },
+          {
+            "label": "strategist",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1370"
+          },
+          {
+            "label": "initialized",
+            "offset": 20,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1373"
+          },
+          {
+            "label": "publicAllowed",
+            "offset": 21,
+            "slot": "1",
+            "type": "t_bool",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1374"
+          },
+          {
+            "label": "vbswapPriceToSell",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1377"
+          },
+          {
+            "label": "vbswapPriceToBuy",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1378"
+          },
+          {
+            "label": "balancePercents",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_uint256)dyn_storage",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1380"
+          },
+          {
+            "label": "contractionPercents",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_array(t_uint256)dyn_storage",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1381"
+          },
+          {
+            "label": "maxAmountToTrade",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1383"
+          },
+          {
+            "label": "vbswap",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_address",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1385"
+          },
+          {
+            "label": "wbnb",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_address",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1386"
+          },
+          {
+            "label": "busd",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_address",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1387"
+          },
+          {
+            "label": "protocolFeeRemover",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_contract(IProtocolFeeRemover)2541",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1389"
+          },
+          {
+            "label": "protocolFeePairsToRemove",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_array(t_address)dyn_storage",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1390"
+          },
+          {
+            "label": "pancakeRouter",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_contract(IUniswapV2Router)1269",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1393"
+          },
+          {
+            "label": "uniswapPaths",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1394"
+          },
+          {
+            "label": "vswapRouter",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_contract(IValueLiquidRouter)1983",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1396"
+          },
+          {
+            "label": "vswapFormula",
+            "offset": 0,
+            "slot": "15",
+            "type": "t_contract(IValueLiquidFormula)2222",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1397"
+          },
+          {
+            "label": "vswapPaths",
+            "offset": 0,
+            "slot": "16",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_array(t_address)dyn_storage))",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1398"
+          },
+          {
+            "label": "vswapFarmingPool",
+            "offset": 0,
+            "slot": "17",
+            "type": "t_address",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1400"
+          },
+          {
+            "label": "vswapFarmingPoolId",
+            "offset": 0,
+            "slot": "18",
+            "type": "t_uint256",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1401"
+          },
+          {
+            "label": "vswapFarmingPoolLpPairAddress",
+            "offset": 0,
+            "slot": "19",
+            "type": "t_address",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1402"
+          },
+          {
+            "label": "vbswapToWbnbPair",
+            "offset": 0,
+            "slot": "20",
+            "type": "t_address",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1404"
+          },
+          {
+            "label": "busdToWbnbPair",
+            "offset": 0,
+            "slot": "21",
+            "type": "t_address",
+            "contract": "ReserveFundV2",
+            "src": "contracts/ReserveFundV2.sol:1405"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IProtocolFeeRemover)2541": {
+            "label": "contract IProtocolFeeRemover",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IUniswapV2Router)1269": {
+            "label": "contract IUniswapV2Router",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IValueLiquidFormula)2222": {
+            "label": "contract IValueLiquidFormula",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IValueLiquidRouter)1983": {
+            "label": "contract IValueLiquidRouter",
+            "numberOfBytes": "20"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_array(t_address)dyn_storage))": {
+            "label": "mapping(address => mapping(address => address[]))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    },
+    "09922b9103c97a6f416e87422aca530b93e51499b20b5622d4a2cf13f01feb61": {
+      "address": "0xc42eEb579e16125207bF203Fd4204E1756495B32",
+      "txHash": "0x18589a3db923f5f38b83c2849c4a7050464090eaedc7a6cdb43bea7dca1b2e67",
+      "layout": {
+        "solcVersion": "0.6.12",
+        "storage": [
+          {
+            "label": "BLOCKS_PER_DAY",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:587"
+          },
+          {
+            "label": "operator",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:590"
+          },
+          {
+            "label": "reserveFund",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_address",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:591"
+          },
+          {
+            "label": "initialized",
+            "offset": 20,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:594"
+          },
+          {
+            "label": "publicAllowed",
+            "offset": 21,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:595"
+          },
+          {
+            "label": "exchangeProxy",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_address",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:597"
+          },
+          {
+            "label": "_locked",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_uint256",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:598"
+          },
+          {
+            "label": "startRewardBlock",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_uint256",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:620"
+          },
+          {
+            "label": "endRewardBlock",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_uint256",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:621"
+          },
+          {
+            "label": "wbnb",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_address",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:623"
+          },
+          {
+            "label": "busd",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_address",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:624"
+          },
+          {
+            "label": "stakeToken",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_address",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:625"
+          },
+          {
+            "label": "rewardPoolInfo",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_address,t_struct(RewardPoolInfo)936_storage)",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:627"
+          },
+          {
+            "label": "userInfo",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_address,t_struct(UserInfo)925_storage)",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:630"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_struct(RewardPoolInfo)936_storage)": {
+            "label": "mapping(address => struct ProfitSharingRewardPool.RewardPoolInfo)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_struct(UserInfo)925_storage)": {
+            "label": "mapping(address => struct ProfitSharingRewardPool.UserInfo)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_struct(RewardPoolInfo)936_storage": {
+            "label": "struct ProfitSharingRewardPool.RewardPoolInfo",
+            "members": [
+              {
+                "label": "rewardToken",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastRewardBlock",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "rewardPerBlock",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "accRewardPerShare",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "totalPaidRewards",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_struct(UserInfo)925_storage": {
+            "label": "struct ProfitSharingRewardPool.UserInfo",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "rewardDebt",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "reward",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "accumulatedEarned",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "lockReward",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "lockRewardReleased",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "lastStakeTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              }
+            ],
+            "numberOfBytes": "224"
           },
           "t_uint256": {
             "label": "uint256",

@@ -11,46 +11,47 @@ const { ethers, upgrades } = require("hardhat");
 
 // StakePoolController proxy admin: 0xEc43E53a4a0CA6b1858E11c9ADFe2bfa68aB6387
 // RewardPool proxy admin: 0xEc43E53a4a0CA6b1858E11c9ADFe2bfa68aB6387
-
+// reserveFundV2 proxy admin: 0xEc43E53a4a0CA6b1858E11c9ADFe2bfa68aB6387
+// ProfitSharingRewardPool proxy admin: 0xEc43E53a4a0CA6b1858E11c9ADFe2bfa68aB6387
 async function main() {
 
-  // const RewardPool = await ethers.getContractFactory("RewardPool");
-  // const ValueLiquidFormula = await ethers.getContractFactory("ValueLiquidFormula");
-  // const ValueLiquidFactory = await ethers.getContractFactory("ValueLiquidFactory");
-  // const StakePoolController = await ethers.getContractFactory("StakePoolController");
-  // const ValueLiquidRouter = await ethers.getContractFactory("ValueLiquidRouter");
+  const RewardPool = await ethers.getContractFactory("RewardPool");
+  const ValueLiquidFormula = await ethers.getContractFactory("ValueLiquidFormula");
+  const ValueLiquidFactory = await ethers.getContractFactory("ValueLiquidFactory");
+  const StakePoolController = await ethers.getContractFactory("StakePoolController");
+  const ValueLiquidRouter = await ethers.getContractFactory("ValueLiquidRouter");
   const MathUtils = await ethers.getContractFactory("MathUtils");
+  const ProtocolFeeRemover = await ethers.getContractFactory("ProtocolFeeRemover");
+  const ReserveFundV2 = await ethers.getContractFactory("ReserveFundV2");
+  const ProfitSharingRewardPool = await ethers.getContractFactory("ProfitSharingRewardPool");
 
-  // const rewardPool = await upgrades.deployProxy(RewardPool, [Swap, 23294248], { initializer: "initialize" });
-  // await rewardPool.deployed();
+  const rewardPool = await upgrades.deployProxy(RewardPool, [Swap, 23294248], { initializer: "initialize" });
+  await rewardPool.deployed();
 
-  // console.log("rewardPool is deployed to:", rewardPool.address);
+  console.log("rewardPool is deployed to:", rewardPool.address);
 
-  // const valueLiquidFormula = await ValueLiquidFormula.deploy();
+  const valueLiquidFormula = await ValueLiquidFormula.deploy();
 
-  // await valueLiquidFormula.deployed();
+  await valueLiquidFormula.deployed();
 
-  // console.log("valueLiquidFormula is deployed to:", valueLiquidFormula.address);
+  console.log("valueLiquidFormula is deployed to:", valueLiquidFormula.address);
 
-  // const valueLiquidFactory = await ValueLiquidFactory.deploy(valueLiquidFormula.address);
+  const valueLiquidFactory = await ValueLiquidFactory.deploy(valueLiquidFormula.address);
 
-  // await valueLiquidFactory.deployed();
+  await valueLiquidFactory.deployed();
 
-  // console.log("valueLiquidFactory is deployed to:", valueLiquidFactory.address);
+  console.log("valueLiquidFactory is deployed to:", valueLiquidFactory.address);
 
-  // const factory = "0x76B0398a038622230DA6A5ebfeF42cBBB3d7a263"
-  // const stakePoolController = await upgrades.deployProxy(StakePoolController, [factory], { initializer: "initialize" });
-  // await stakePoolController.deployed();
+  const stakePoolController = await upgrades.deployProxy(StakePoolController, [factory], { initializer: "initialize" });
+  await stakePoolController.deployed();
 
-  // console.log("stakePoolController is deployed to:", stakePoolController.address);
+  console.log("stakePoolController is deployed to:", stakePoolController.address);
 
-  // const StakePoolController = "0x3F3337cD8262F3246875C0e4BA79d9b767c0c5DC"
-  // const WBNB = "0x2383F69a911Bc80afCaeeFB5B67649D1A078Cae7"
-  // const valueLiquidRouter = await ValueLiquidRouter.deploy(factory, StakePoolController, WBNB);
+  const valueLiquidRouter = await ValueLiquidRouter.deploy(factory, StakePoolController, WBNB);
 
-  // await valueLiquidRouter.deployed();
+  await valueLiquidRouter.deployed();
 
-  // console.log("valueLiquidRouter is deployed to:", valueLiquidRouter.address);
+  console.log("valueLiquidRouter is deployed to:", valueLiquidRouter.address);
 
 
   const mathLib = await MathUtils.deploy();
@@ -65,18 +66,18 @@ async function main() {
   const swapUtils = await SwapUtils.deploy();
   await swapUtils.deployed();
 
-  // const SwapCreator = await ethers.getContractFactory("SwapCreator", {
-  //   // signer: signers[0],
-  //   libraries: {
-  //     SwapUtils: swapUtils.address,
-  //   },
-  // });
+  const SwapCreator = await ethers.getContractFactory("SwapCreator", {
+    // signer: signers[0],
+    libraries: {
+      SwapUtils: swapUtils.address,
+    },
+  });
 
-  // const swapCreator = await SwapCreator.deploy();
+  const swapCreator = await SwapCreator.deploy();
 
-  // await swapCreator.deployed();
+  await swapCreator.deployed();
 
-  // console.log("Swap Creator is deployed to:", swapCreator.address);
+  console.log("Swap Creator is deployed to:", swapCreator.address);
 
   const Swap = await ethers.getContractFactory("Swap", {
     // signer: signers[0],
@@ -84,6 +85,30 @@ async function main() {
       SwapUtils: swapUtils.address,
     },
   });
+
+  const protocolFeeRemover = await ProtocolFeeRemover.deploy();
+
+  await protocolFeeRemover.deployed();
+
+  console.log("protocolFeeRemover is deployed to:", protocolFeeRemover.address);
+  
+
+  const reserveFundV2 = await upgrades.deployProxy(ReserveFundV2, 
+    [VBswap, WBNB, BUSD, `${protocolFeeRemover.address}`, pancake,valueLRouter, formular], 
+    { initializer: "initialize" }
+  );
+  await reserveFundV2.deployed();
+
+  console.log("reserveFundV2 is deployed to:", reserveFundV2.address);
+
+  
+  const profitSharingRewardPool = await upgrades.deployProxy(ProfitSharingRewardPool, 
+    [ValueLiquidPair_vbswap_BNB_Pair, WBNB, BUSD, reserve, 23308802], 
+    { initializer: "initialize" }
+  );
+  await profitSharingRewardPool.deployed();
+
+  console.log("profitSharingRewardPool is deployed to:", profitSharingRewardPool.address);
 
 }
 

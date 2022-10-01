@@ -471,34 +471,6 @@ library Address {
         return _verifyCallResult(success, returndata, errorMessage);
     }
 
-    /**
-     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],
-     * but performing a delegate call.
-     *
-     * _Available since v3.4._
-     */
-    function functionDelegateCall(address target, bytes memory data) internal returns (bytes memory) {
-        return functionDelegateCall(target, data, "Address: low-level delegate call failed");
-    }
-
-    /**
-     * @dev Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],
-     * but performing a delegate call.
-     *
-     * _Available since v3.4._
-     */
-    function functionDelegateCall(
-        address target,
-        bytes memory data,
-        string memory errorMessage
-    ) internal returns (bytes memory) {
-        require(isContract(target), "Address: delegate call to non-contract");
-
-        // solhint-disable-next-line avoid-low-level-calls
-        (bool success, bytes memory returndata) = target.delegatecall(data);
-        return _verifyCallResult(success, returndata, errorMessage);
-    }
-
     function _verifyCallResult(
         bool success,
         bytes memory returndata,
@@ -1398,7 +1370,7 @@ contract ReserveFundV2 {
     address public strategist;
 
     // flags
-    bool public initialized = false;
+    bool public initialized;
     bool public publicAllowed; // set to true to allow public to call rebalance()
 
     // price
@@ -1425,12 +1397,12 @@ contract ReserveFundV2 {
     IValueLiquidFormula public vswapFormula; // vSwap Formula
     mapping(address => mapping(address => address[])) public vswapPaths;
 
-    address public vswapFarmingPool = address(0xd56339F80586c08B7a4E3a68678d16D37237Bd96);
-    uint256 public vswapFarmingPoolId = 1;
-    address public vswapFarmingPoolLpPairAddress = address(0x522361C3aa0d81D1726Fa7d40aA14505d0e097C9); // BUSD/WBNB
+    address public vswapFarmingPool;
+    uint256 public vswapFarmingPoolId;
+    address public vswapFarmingPoolLpPairAddress; // BUSD/WBNB
 
-    address public vbswapToWbnbPair = address(0x8DD39f0a49160cDa5ef1E2a2fA7396EEc7DA8267); // vBSWAP/WBNB 50-50
-    address public busdToWbnbPair = address(0x522361C3aa0d81D1726Fa7d40aA14505d0e097C9); // BUSD/WBNB 50-50
+    address public vbswapToWbnbPair; // vBSWAP/WBNB 50-50
+    address public busdToWbnbPair; // BUSD/WBNB 50-50
 
     /* =================== Added variables (need to keep orders for proxy to work) =================== */
     // ....
@@ -1494,12 +1466,12 @@ contract ReserveFundV2 {
         maxAmountToTrade[wbnb] = 10 ether; // sell up to 10 BNB each time
         maxAmountToTrade[busd] = 1000 ether; // sell up to 1000 BUSD each time
 
-        vswapFarmingPool = address(0xd56339F80586c08B7a4E3a68678d16D37237Bd96); // reward pool
+        vswapFarmingPool = address(0x654ABd04dD9fDd30184E09F0c948Fc8A1f648540); // reward pool
         vswapFarmingPoolId = 1;
-        vswapFarmingPoolLpPairAddress = address(0x5DaC098c8d57093586621caAbcdD883cecC46924); // BUSD/WBNB
+        vswapFarmingPoolLpPairAddress = address(0x67a7A2363e5387E6989B9b3f338AB0E009f7C025); // BUSD/WBNB
 
-        vbswapToWbnbPair = address(0x3D7C354d75b613A73AE3D1b57Bc01C5c757079Af); // vBSWAP/WBNB 50-50
-        busdToWbnbPair = address(0x363687c5DbB3f6147C77b75a7ff0B2957Ad00C38); // BUSD/WBNB 50-50
+        vbswapToWbnbPair = address(0xf8162a23CC765D4A8765beb9087823fF0e009C07); // vBSWAP/WBNB 50-50
+        busdToWbnbPair = address(0xEd902085E85bf09B93a98E23Faf70dA44B59B9D9); // BUSD/WBNB 50-50
 
         vswapPaths[wbnb][busd] = [busdToWbnbPair];
         vswapPaths[busd][wbnb] = [busdToWbnbPair];

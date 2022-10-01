@@ -11,7 +11,12 @@
     "ValueLiquidityFactory": "0x76B0398a038622230DA6A5ebfeF42cBBB3d7a263",
     "StakePoolControllerProxy": "0x3F3337cD8262F3246875C0e4BA79d9b767c0c5DC",
     "ValueLiquidityRouter": "0xB3A480f233A807534821c34480fb0bdacf4277a8",
+    "pancake_Router": "0x00749e00af4359df5e8c156af6dfbdf30dd53f44",
     "swapCreator" : "0x2799DbACfD3047dD595a2076A8872B2cBa2cD0f0",
+    "protocolFeeRemoval": "0x4919c2D41eb2139b3B215420b09Cb4EEDfEFF13f",
+    "ReserveFundV2Proxy": "0xb71A9F36652E35647D97bBd753fA24590514BFa4",
+    "ProfitSharingRewardPool": "0xe069c797ab330EB3362743e3E25225E47bE98122",
     "ValueLiquidPair-BUSD/BNB-Pair" : " 0x67a7A2363e5387E6989B9b3f338AB0E009f7C025",
+    "ValueLiquidPair-VBSwap/BNB-Pair": "0xf8162a23CC765D4A8765beb9087823fF0e009C07",
     "ValueLiquidPair-WBNB/BUSD-Pair" : "0xEd902085E85bf09B93a98E23Faf70dA44B59B9D9"
 }
