@@ -2,7 +2,7 @@
   "manifestVersion": "3.2",
   "admin": {
     "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-    "txHash": "0x0918716f0e7aab6b290e0d49ba6f6a3a3c964fe1c294e1ecfad6765741e5d995"
+    "txHash": "0x6446ae141dc4076d15e0fea22a1a88f0da491fd718faad1c657cad43caf02c13"
   },
   "proxies": [
     {
@@ -310,155 +310,123 @@
         }
       }
     },
-    "d5862dcd7173533d9b06e5f1f772d45661ea8e8ff2babf82047a675bf22955a6": {
+    "09922b9103c97a6f416e87422aca530b93e51499b20b5622d4a2cf13f01feb61": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0x80ba8395af8ce048ac48a2d4bf716eccd1f1de4946777d91681b56e37f154215",
+      "txHash": "0x3269dfc9292af865057b04f5c56668dc366777658c79594430d05f03e8ae27a8",
       "layout": {
-        "solcVersion": "0.7.6",
+        "solcVersion": "0.6.12",
         "storage": [
           {
-            "label": "swapFactory",
+            "label": "BLOCKS_PER_DAY",
             "offset": 0,
             "slot": "0",
-            "type": "t_contract(IValueLiquidFactory)839",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:823"
+            "type": "t_uint256",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:587"
           },
           {
-            "label": "governance",
+            "label": "operator",
             "offset": 0,
             "slot": "1",
             "type": "t_address",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:824"
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:590"
           },
           {
-            "label": "feeCollector",
+            "label": "reserveFund",
             "offset": 0,
             "slot": "2",
             "type": "t_address",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:826"
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:591"
           },
           {
-            "label": "feeToken",
+            "label": "initialized",
+            "offset": 20,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:594"
+          },
+          {
+            "label": "publicAllowed",
+            "offset": 21,
+            "slot": "2",
+            "type": "t_bool",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:595"
+          },
+          {
+            "label": "exchangeProxy",
             "offset": 0,
             "slot": "3",
             "type": "t_address",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:827"
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:597"
           },
           {
-            "label": "feeAmount",
+            "label": "_locked",
             "offset": 0,
             "slot": "4",
             "type": "t_uint256",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:828"
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:598"
           },
           {
-            "label": "_stakePools",
+            "label": "startRewardBlock",
             "offset": 0,
             "slot": "5",
-            "type": "t_mapping(t_address,t_bool)",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:830"
+            "type": "t_uint256",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:620"
           },
           {
-            "label": "_whitelistStakingFor",
+            "label": "endRewardBlock",
             "offset": 0,
             "slot": "6",
-            "type": "t_mapping(t_address,t_bool)",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:831"
+            "type": "t_uint256",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:621"
           },
           {
-            "label": "_whitelistRewardRebaser",
+            "label": "wbnb",
             "offset": 0,
             "slot": "7",
-            "type": "t_mapping(t_address,t_bool)",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:832"
+            "type": "t_address",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:623"
           },
           {
-            "label": "_whitelistRewardMultiplier",
+            "label": "busd",
             "offset": 0,
             "slot": "8",
-            "type": "t_mapping(t_address,t_bool)",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:833"
+            "type": "t_address",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:624"
           },
           {
-            "label": "_whitelistStakePools",
+            "label": "stakeToken",
             "offset": 0,
             "slot": "9",
-            "type": "t_mapping(t_address,t_int8)",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:834"
+            "type": "t_address",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:625"
           },
           {
-            "label": "_stakePoolVerifiers",
+            "label": "rewardPoolInfo",
             "offset": 0,
             "slot": "10",
-            "type": "t_mapping(t_address,t_bool)",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:835"
+            "type": "t_mapping(t_address,t_struct(RewardPoolInfo)936_storage)",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:627"
           },
           {
-            "label": "stakePoolCreators",
+            "label": "userInfo",
             "offset": 0,
             "slot": "11",
-            "type": "t_mapping(t_uint256,t_address)",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:836"
-          },
-          {
-            "label": "allStakePools",
-            "offset": 0,
-            "slot": "12",
-            "type": "t_array(t_address)dyn_storage",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:837"
-          },
-          {
-            "label": "enableWhitelistRewardRebaser",
-            "offset": 0,
-            "slot": "13",
-            "type": "t_bool",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:838"
-          },
-          {
-            "label": "enableWhitelistRewardMultiplier",
-            "offset": 1,
-            "slot": "13",
-            "type": "t_bool",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:839"
-          },
-          {
-            "label": "_initialized",
-            "offset": 2,
-            "slot": "13",
-            "type": "t_bool",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:840"
-          },
-          {
-            "label": "allowEmergencyWithdrawStakePools",
-            "offset": 0,
-            "slot": "14",
-            "type": "t_mapping(t_address,t_bool)",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:842"
-          },
-          {
-            "label": "extraFeeRate",
-            "offset": 0,
-            "slot": "15",
-            "type": "t_uint256",
-            "contract": "StakePoolController",
-            "src": "contracts/StakePoolController.sol:844"
+            "type": "t_mapping(t_address,t_struct(UserInfo)925_storage)",
+            "contract": "ProfitSharingRewardPool",
+            "src": "contracts/ProfitSharingRewardPool.sol:630"
           }
         ],
         "types": {
@@ -466,33 +434,105 @@
             "label": "address",
             "numberOfBytes": "20"
           },
-          "t_array(t_address)dyn_storage": {
-            "label": "address[]",
-            "numberOfBytes": "32"
-          },
           "t_bool": {
             "label": "bool",
             "numberOfBytes": "1"
           },
-          "t_contract(IValueLiquidFactory)839": {
-            "label": "contract IValueLiquidFactory",
-            "numberOfBytes": "20"
-          },
-          "t_int8": {
-            "label": "int8",
-            "numberOfBytes": "1"
-          },
-          "t_mapping(t_address,t_bool)": {
-            "label": "mapping(address => bool)",
+          "t_mapping(t_address,t_struct(RewardPoolInfo)936_storage)": {
+            "label": "mapping(address => struct ProfitSharingRewardPool.RewardPoolInfo)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_address,t_int8)": {
-            "label": "mapping(address => int8)",
+          "t_mapping(t_address,t_struct(UserInfo)925_storage)": {
+            "label": "mapping(address => struct ProfitSharingRewardPool.UserInfo)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_address)": {
-            "label": "mapping(uint256 => address)",
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
             "numberOfBytes": "32"
+          },
+          "t_struct(RewardPoolInfo)936_storage": {
+            "label": "struct ProfitSharingRewardPool.RewardPoolInfo",
+            "members": [
+              {
+                "label": "rewardToken",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "lastRewardBlock",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "rewardPerBlock",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "accRewardPerShare",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "totalPaidRewards",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              }
+            ],
+            "numberOfBytes": "160"
+          },
+          "t_struct(UserInfo)925_storage": {
+            "label": "struct ProfitSharingRewardPool.UserInfo",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "rewardDebt",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "reward",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "accumulatedEarned",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "lockReward",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "lockRewardReleased",
+                "type": "t_mapping(t_address,t_uint256)",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "lastStakeTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              }
+            ],
+            "numberOfBytes": "224"
           },
           "t_uint256": {
             "label": "uint256",
