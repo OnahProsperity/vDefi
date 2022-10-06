@@ -28,7 +28,8 @@ async function main() {
   // const WaultSwapFactory = await ethers.getContractFactory("WaultSwapFactory");
   // const VSafeVaultMaster = await ethers.getContractFactory("VSafeVaultMaster");
   // const VSafeVault = await ethers.getContractFactory("VSafeVault"); // VSafeVaultController
-  const VSafeVaultController = await ethers.getContractFactory("VSafeVaultController"); // VSafeVaultController
+  const YFV = await ethers.getContractFactory("YFV");
+  // const VSafeVaultController = await ethers.getContractFactory("VSafeVaultController"); // VSafeVaultController
 
   // const rewardPool = await upgrades.deployProxy(RewardPool, [Swap, 23294248], { initializer: "initialize" });
   // await rewardPool.deployed();
@@ -137,12 +138,17 @@ async function main() {
 
   // console.log("vSafeVaultMaster is deployed to:", vSafeVaultMaster.address);
 
-  const vSafeVaultController = await VSafeVaultController.deploy();
+  // const vSafeVaultController = await VSafeVaultController.deploy();
 
-  await vSafeVaultController.deployed();
+  // await vSafeVaultController.deployed();
 
-  console.log("vSafeVault is deployed to:", vSafeVaultController.address);
+  // console.log("vSafeVault is deployed to:", vSafeVaultController.address);
 
+  const yFV = await YFV.deploy();
+
+  await yFV.deployed();
+
+  console.log("yFV is deployed to:", yFV.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
